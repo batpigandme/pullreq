@@ -336,6 +336,17 @@ Rando</code></pre>
 </section>
 <section id="where-do-typos-come-from" class="level2">
 <h2>Where do typos come from?</h2>
+<p>Open scene: you’re reading up on the <code>summarise.R</code> function in dplyr and notice that there’s an error in subject-verb agreement in the following fragment, <code>&quot;Data frames are the only backend that supports...&quot;</code>. The subject (data frame_s_) is plural, but the verb (support_s_) is singular.</p>
+<p>You click on the GitHub icon, which takes you to the <code>dplyr</code> repo, but where are you supposed to make your edit? The page you were looking at was <code>html</code>. However, that html was the output of a different file. This means that, if you modify the html file, the correction would show up in the product, but not its source. The package maintainer would then have to either fix the source file by hand, or risk losing the change the next time the website output is rendered. The relationship is unidirectional.</p>
+<section id="a-detour-into-pkgdown" class="level3">
+<h3>A detour into <code>pkgdown</code></h3>
+</section>
+</section>
+<section id="others-may-differ" class="level2">
+<h2>OTHERS MAY DIFFER</h2>
+<p>Because the majority of R users work with the CRAN version of a package, the documentation on tidyverse.org is <em>intentially</em> out of sync with the source code under development. Other package developers and maintainers may differ on this, depending on their respective workflows.</p>
+<pre class="r"><code>devtools::document()</code></pre>
+<hr />
 </section>
 <section class="footnotes">
 <hr />
