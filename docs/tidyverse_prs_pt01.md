@@ -1,6 +1,7 @@
 ---
 title: "PRs in the Tidyverse: Part 1"
 author: "Mara Averick"
+date: "2017-11-19"
 output:
   html_document:
     keep_md: TRUE
@@ -83,14 +84,23 @@ that there's an error in subject-verb agreement in the following fragment,
 (data frame_s_) is plural, but the verb (support_s_) is singular.
 
 You click on the GitHub icon, which takes you to the `dplyr` repo, but where are 
-you supposed to make your edit? The page you were looking at was `html`. 
-However, that html was the output of a different file. This means that, if you 
-modify the html file, the correction would show up in the product, but not its 
+you supposed to make your edit? The page you were looking at was `HTML`. 
+However, that HTML was the output of a different file. This means that, if you 
+modify the HTML file, the correction would show up in the product, but not its 
 source. The package maintainer would then have to either fix the source file by 
 hand, or risk losing the change the next time the website output is rendered. 
 The relationship is unidirectional.
 
-### A detour into `pkgdown`
+### A detour into `pkgdown` 
+
+Here is (almost) everything you need to know about pkgdown for the purposes of 
+this guide: it makes static HTML sites for R packages. It's special because it 
+leverages the pre-existing conventions for writing R documentation to render 
+these sites, so the content only needs to be edited in one place.[^pkgdown]
+
+Different components of a pkgdown site come from different parts of an R 
+package, some of which have already been rendered by 
+[`roxygen2`](https://github.com/klutometis/roxygen). 
 
 ## OTHERS MAY DIFFER
 
@@ -110,3 +120,7 @@ devtools::document()
 ----
 
 [^1]: Which, yes, is totally one of the great reasons to sign up to do one, too!
+
+[^pkgdown]: You can learn about it much greater detail on the [`pkgdown` site](https://hadley.github.io/pkgdown/index.html)...which was rendered using, wait for it: pkgdown.
+
+

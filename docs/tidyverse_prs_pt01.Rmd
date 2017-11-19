@@ -1,6 +1,7 @@
 ---
 title: "PRs in the Tidyverse: Part 1"
 author: "Mara Averick"
+date: "`r Sys.Date()`"
 output:
   html_document:
     keep_md: TRUE
@@ -69,8 +70,9 @@ In addition to the [tidyverse packages](https://www.tidyverse.org/packages/),
 you'll need:  
 
  * [roxygen2](https://github.com/klutometis/roxygen)
- * [devtools](https://github.com/hadley/devtools), and
+ * [devtools](https://github.com/hadley/devtools)
  * [pkgdown](https://hadley.github.io/pkgdown/index.html)
+ * [testthat](http://testthat.r-lib.org/)
 
 If you already know all about those packages and how to use them, you probably 
 don't need to be reading this. If you have heard those package names, and maybe
