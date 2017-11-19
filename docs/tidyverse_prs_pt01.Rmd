@@ -36,7 +36,15 @@ You don't need to be an R neophyte for the above to be true. True confession: I
 really didn't understand where those `do not edit by hand` files came from until 
 I did an rOpenSci [package review](https://ropensci.org/blog/2017/08/22/first-package-review/)
 for Nick Tierney's `r emo::ji_glue(":star2:")` [`visdat`](http://visdat.njtierney.com/).[^1]
+No one wins in this scenario. Nobody wants typos, and this kind of minor fix is 
+a great way to get familiar with the mechanics of making contributions. Plus, 
+I'd way rather have package maintainers working on those sweet feature requests 
+I submitted than hunting around for a renegade letter or two in the function 
+reference.
 
+An alternate title to this could've been **Packages for people who don't actually 
+want to write packages**. Expect hand-waiving and references to magic, invisible 
+happenings, because this is a bare-minimum, forensic approach.
 
 ## What is this?
 
@@ -53,8 +61,9 @@ want to learn more about these things, I highly recommend checking out
 
 There are many great guides on contributing to open-source projects in general,
 and this is intended as a complement those guides. This is meant to make the 
-existing [tidyverse contribution guidelines](https://www.tidyverse.org/contribute/)
-more accessible, and not to replace them. 
+existing [tidyverse contribution guidelines](https://www.tidyverse.org/contribute/),
+and [The tidyverse style guide](http://style.tidyverse.org/) more accessible, 
+and not to replace them. 
 
 In addition to the [tidyverse packages](https://www.tidyverse.org/packages/), 
 you'll need:  
@@ -69,6 +78,7 @@ use devtools to install packages from non-CRAN sources, you're in the right plac
 `r emo::ji_glue(":thumbsup:")`
 
 ## Where do typos come from?
+
 
 
 [^1]: Which, yes, is totally one of the great reasons to sign up to do one, too!
