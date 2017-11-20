@@ -30,11 +30,13 @@ on many levels.
 
 But, I've also been on the other side of the screen: seeing a typo, 
 and wanting to fix it without hassling the maintainers, but have given up half-way
-through because I didn't know _where_ to fix it. I know the correct answer lies
-somewhere upstream, but I might not be exactly sure where. In some instances, 
+through because I didn't know _where_ to make the change it. I know the correct answer is 
+_somewhere_ upstream, but I might not be exactly sure where. In some instances, 
 this isn't the case— I know that a `README.md` file is the output of a 
 `README.Rmd`, if it exists. But with package documentation (vignettes, 
 pkgdown sites, etc) it's not as readily apparent.
+
+![R Markdown document to Markdown document](https://i.imgur.com/4euq7r2.png)
 
 You don't need to be an R neophyte for the above to be true. True confession: I 
 really didn't understand where those `do not edit by hand` files came from until 
