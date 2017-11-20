@@ -1,7 +1,7 @@
 ---
 title: "PRs in the Tidyverse: Part 1"
 author: "Mara Averick"
-date: "2017-11-19"
+date: "2017-11-20"
 output:
   html_document:
     keep_md: TRUE
@@ -68,8 +68,9 @@ In addition to the [tidyverse packages](https://www.tidyverse.org/packages/),
 you'll need:  
 
  * [roxygen2](https://github.com/klutometis/roxygen)
- * [devtools](https://github.com/hadley/devtools), and
+ * [devtools](https://github.com/hadley/devtools)
  * [pkgdown](https://hadley.github.io/pkgdown/index.html)
+ * [testthat](http://testthat.r-lib.org/)
 
 If you already know all about those packages and how to use them, you probably 
 don't need to be reading this. If you have heard those package names, and maybe
@@ -100,7 +101,10 @@ these sites, so the content only needs to be edited in one place.[^pkgdown]
 
 Different components of a pkgdown site come from different parts of an R 
 package, some of which have already been rendered by 
-[`roxygen2`](https://github.com/klutometis/roxygen). 
+[`roxygen2`](https://github.com/klutometis/roxygen). I _highly_ recommend you 
+take a quick look at Hilary Parker's [_Writing an R package from scratch_](https://hilaryparker.com/2014/04/29/writing-an-r-package-from-scratch/) 
+as it covers the roxygen basics really well. (Heck, if you're not feeling up to 
+the five/six minutes of reading, just skim *Step 4*).
 
 ## OTHERS MAY DIFFER
 

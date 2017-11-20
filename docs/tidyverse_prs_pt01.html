@@ -11,7 +11,7 @@
 
 <meta name="author" content="Mara Averick" />
 
-<meta name="date" content="2017-11-19" />
+<meta name="date" content="2017-11-20" />
 
 <title>PRs in the Tidyverse: Part 1</title>
 
@@ -306,7 +306,7 @@ $(document).ready(function () {
 
 <h1 class="title toc-ignore">PRs in the Tidyverse: Part 1</h1>
 <h4 class="author"><em>Mara Averick</em></h4>
-<h4 class="date"><em>2017-11-19</em></h4>
+<h4 class="date"><em>2017-11-20</em></h4>
 
 </div>
 
@@ -331,8 +331,9 @@ Rando</code></pre>
 <p>In addition to the <a href="https://www.tidyverse.org/packages/">tidyverse packages</a>, you’ll need:</p>
 <ul>
 <li><a href="https://github.com/klutometis/roxygen">roxygen2</a></li>
-<li><a href="https://github.com/hadley/devtools">devtools</a>, and</li>
+<li><a href="https://github.com/hadley/devtools">devtools</a></li>
 <li><a href="https://hadley.github.io/pkgdown/index.html">pkgdown</a></li>
+<li><a href="http://testthat.r-lib.org/">testthat</a></li>
 </ul>
 <p>If you already know all about those packages and how to use them, you probably don’t need to be reading this. If you have heard those package names, and maybe use devtools to install packages from non-CRAN sources, you’re in the right place. 👍</p>
 </section>
@@ -343,7 +344,7 @@ Rando</code></pre>
 <section id="a-detour-into-pkgdown" class="level3">
 <h3>A detour into <code>pkgdown</code></h3>
 <p>Here is (almost) everything you need to know about pkgdown for the purposes of this guide: it makes static HTML sites for R packages. It’s special because it leverages the pre-existing conventions for writing R documentation to render these sites, so the content only needs to be edited in one place.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></p>
-<p>Different components of a pkgdown site come from different parts of an R package, some of which have already been rendered by <a href="https://github.com/klutometis/roxygen"><code>roxygen2</code></a>.</p>
+<p>Different components of a pkgdown site come from different parts of an R package, some of which have already been rendered by <a href="https://github.com/klutometis/roxygen"><code>roxygen2</code></a>. I <em>highly</em> recommend you take a quick look at Hilary Parker’s <a href="https://hilaryparker.com/2014/04/29/writing-an-r-package-from-scratch/"><em>Writing an R package from scratch</em></a> as it covers the roxygen basics really well. (Heck, if you’re not feeling up to the five/six minutes of reading, just skim <em>Step 4</em>).</p>
 </section>
 </section>
 <section id="others-may-differ" class="level2">
