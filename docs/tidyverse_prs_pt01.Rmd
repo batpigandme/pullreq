@@ -38,7 +38,7 @@ In some instances, this isn't the case— I know that a `README.md` file is the
 output of a `README.Rmd`, if it exists. But with package documentation 
 (vignettes, pkgdown sites, etc) it's not as readily apparent.
 
-![R Markdown document to Markdown document](https://i.imgur.com/4euq7r2.png)
+![R Markdown document to Markdown document](https://i.imgur.com/tMR45VF.png)
 
 You don't need to be an R neophyte for the above to be true. True confession: I 
 really didn't understand where those `do not edit by hand` files came from until 
@@ -114,6 +114,26 @@ package, some of which have already been rendered by
 take a quick look at Hilary Parker's [_Writing an R package from scratch_](https://hilaryparker.com/2014/04/29/writing-an-r-package-from-scratch/) 
 as it covers the roxygen basics really well. (Heck, if you're not feeling up to 
 the five/six minutes of reading, just skim *Step 4*).
+
+### What about roxygen?
+
+It's well worth your time to learn about roxygen2, as you'll need it if and/or 
+when you decide to develop your _own_ package. But, big picture: it takes 
+specially formatted comments from the R source codes and turns them into `.Rd` 
+files for package documentation (i.e. the stuff that shows up in the viewer 
+pane when you type in `?function`). (Though not everything you read on a pkgdown site 
+or in documentation is a function reference).
+
+![R to Rd](https://i.imgur.com/MzZiB2h.gif)
+
+Both roxygen2- and pkgdown-generated documents will say `"do not edit..."` in 
+the first few lines. This warning should be heeded, and you should not, in fact 
+edit those documents by hand!
+
+### Over in the repo...
+
+If you search for the 
+
 
 ## OTHERS MAY DIFFER
 
