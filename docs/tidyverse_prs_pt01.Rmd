@@ -110,8 +110,34 @@ these sites, so the content only needs to be edited in one place.[^pkgdown]
 
 Different components of a pkgdown site come from different parts of an R 
 package, some of which have already been rendered by 
-[`roxygen2`](https://github.com/klutometis/roxygen). I _highly_ recommend you 
-take a quick look at Hilary Parker's [_Writing an R package from scratch_](https://hilaryparker.com/2014/04/29/writing-an-r-package-from-scratch/) 
+[`roxygen2`](https://github.com/klutometis/roxygen). 
+
+```
+# Folders in the dplyr package directory
+
+/dplyr
+├── R
+├── data
+├── data-raw
+├── docs
+|  ├── articles
+|  ├── news
+|  └── reference
+├── inst
+|  ├── db
+|  └── include
+├── man
+|  └── figures
+├── revdep
+├── src
+├── tests
+|  └── testthat
+└── vignettes
+   └── internals
+```
+
+I _highly_ recommend you take a quick look at Hilary Parker's 
+[_Writing an R package from scratch_](https://hilaryparker.com/2014/04/29/writing-an-r-package-from-scratch/) 
 as it covers the roxygen basics really well. (Heck, if you're not feeling up to 
 the five/six minutes of reading, just skim *Step 4*).
 

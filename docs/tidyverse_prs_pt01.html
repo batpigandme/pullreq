@@ -351,7 +351,29 @@ Rando</code></pre>
 <section id="a-detour-into-pkgdown" class="level3">
 <h3>A detour into <code>pkgdown</code></h3>
 <p>Here is (almost) everything you need to know about pkgdown for the purposes of this guide: it makes static HTML sites for R packages. It’s special because it leverages the pre-existing conventions for writing R documentation to render these sites, so the content only needs to be edited in one place.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></p>
-<p>Different components of a pkgdown site come from different parts of an R package, some of which have already been rendered by <a href="https://github.com/klutometis/roxygen"><code>roxygen2</code></a>. I <em>highly</em> recommend you take a quick look at Hilary Parker’s <a href="https://hilaryparker.com/2014/04/29/writing-an-r-package-from-scratch/"><em>Writing an R package from scratch</em></a> as it covers the roxygen basics really well. (Heck, if you’re not feeling up to the five/six minutes of reading, just skim <em>Step 4</em>).</p>
+<p>Different components of a pkgdown site come from different parts of an R package, some of which have already been rendered by <a href="https://github.com/klutometis/roxygen"><code>roxygen2</code></a>.</p>
+<pre><code># Folders in the dplyr package directory
+
+/dplyr
+├── R
+├── data
+├── data-raw
+├── docs
+|  ├── articles
+|  ├── news
+|  └── reference
+├── inst
+|  ├── db
+|  └── include
+├── man
+|  └── figures
+├── revdep
+├── src
+├── tests
+|  └── testthat
+└── vignettes
+   └── internals</code></pre>
+<p>I <em>highly</em> recommend you take a quick look at Hilary Parker’s <a href="https://hilaryparker.com/2014/04/29/writing-an-r-package-from-scratch/"><em>Writing an R package from scratch</em></a> as it covers the roxygen basics really well. (Heck, if you’re not feeling up to the five/six minutes of reading, just skim <em>Step 4</em>).</p>
 </section>
 <section id="what-about-roxygen" class="level3">
 <h3>What about roxygen?</h3>
