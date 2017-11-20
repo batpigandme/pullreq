@@ -23,7 +23,12 @@ Rando
 
 This document is an effort to avoid the scenario above. Though Yihui Xie's 
 [You Do Not Need to Tell Me I Have A Typo in My Documentation](https://yihui.name/en/2013/06/fix-typo-in-documentation/) is right
-on many levels, I've been on the other side of the screen: seeing a typo, 
+on many levels. 
+
+![Source: You Do Not Need to Tell Me I Have A Typo in My Documentation by Yihui Xie](https://i.imgur.com/nKeGYGz.png)  
+
+
+But, I've also been on the other side of the screen: seeing a typo, 
 and wanting to fix it without hassling the maintainers, but have given up half-way
 through because I didn't know _where_ to fix it. I know the correct answer lies
 somewhere upstream, but I might not be exactly sure where. In some instances, 
