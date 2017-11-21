@@ -172,14 +172,14 @@ For example, the typo _exists_ in `summarise.html`, but (even if you didn't know
 about pkgdown and roxygen) you'd never edit that because it says `do not edit by 
 hand`. 
 
-![dplyr summarise.html](https://i.imgur.com/O0YNHzH.png)
+![dplyr summarise.html](https://i.imgur.com/IbnUa7W.png)
 
 ### Over in the repo...
 
 For _most_ function references there will be an file `function.R`. However, if 
 go to the dplyr repo and to the `R/` folder, `summarise.R` isn't there! 
 
-![summarise.R doesn't exist](https://i.imgur.com/SS5Pk7I.png)
+![summarise.R doesn't exist](https://i.imgur.com/0RPDcNl.png)
 
 But, since GitHub repos are searchable, we can just look for our text that way.[^2] 
 We've already covered `summarise.html` (namely, the fact that we won't be editing 
@@ -209,14 +209,19 @@ to tick the appropriate radio button.
 ### Branching and baseline
 
 In addition to cloning the files in the package, you should now have two "new" 
-tabs in your environement pane: **Build** and **Git**.
+tabs in your environment pane: **Build** and **Git**.
 
 ![RStudio before and after cloning repo](https://i.imgur.com/4xUy3fY.png)
+
+### Optional: branch out
 
 In the **Git** tab, click on the icon with purple boxes to create a new 
 **branch**. It's nice to give it an informative name, for example: `summarise-typo`. 
 
 ![Git branch icon](https://i.imgur.com/1miEAF9.png?1)
+
+
+### CMD Check
 
 Now you're ready to get your baseline using R CMD check. You can do this by 
 clicking on the **Check** icon in the **Build** tab. Note that this may take a 
@@ -224,9 +229,9 @@ little while, which doesn't necessarily mean that anything's wrong. It's also
 likely that there are some parameters passed to `devtools::check()`, which is 
 totally fine.
 
-![Check icon in RStudio Build pane](https://i.imgur.com/nKdQIgw.png)
+![Check icon in RStudio Build pane](https://i.imgur.com/MNhJIXQ.png)
 
-It's worth taking a look at the arguments, if only to help you undersand any 
+It's worth taking a look at the arguments, if only to help you understand any 
 errors or warnings returned. For example, the warnings re. missing vignettes 
 aren't surprising, given `--no-build-vignettes` was passed as a `build_arg`.
 
@@ -235,6 +240,31 @@ devtools::check(build_args = c('--no-build-vignettes'))
 ```
 
 ![dplyr R CMD check results](https://i.imgur.com/Y6kSt2R.png)
+
+#### Frequently found failures
+
+ * Missing packages. Solution? Install the packages.
+ 
+ ![Missing suggested packages](https://i.imgur.com/xXbiXPp.png)
+ 
+ * Assorted things totally unrelated to what I'm trying to fix...
+ 
+   + Go back to the package repo and click on the `build` badge, this 
+   will take you to Travis CI, where you can see the logs from the most recent 
+   build of the package, including the output of `R CMD check`
+   
+   ![Travis CI R CMD check](https://i.imgur.com/KFkBuC0.png)
+   
+   + If you're fixing something in a function reference (like this example), try 
+   running `devtools::check_man()` and see what happens. 
+   
+You're trying to establish a baseline to make sure that _you_ didn't break 
+anything. So, if you find that you can make your edit without _changing_ the 
+output of R CMD check,things are going well.
+   
+### Now you're ready to make your change!
+
+
 
 ## OTHERS MAY DIFFER
 
