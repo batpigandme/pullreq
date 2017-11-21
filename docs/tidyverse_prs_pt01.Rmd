@@ -17,7 +17,7 @@ knitr::opts_chunk$set(echo = TRUE)
 object documentation in the tidyverse, this means the `.R` files. 
 
 From the GitHub repo, your workflow should be: `fork`, `clone`, `check`, 
-`branch`, `edit`, render using `document()`, `check`, `push`, `PR`.
+(`branch`), `edit`, render using `document()`, `check`, `push`, `PR`.
 
 
 
@@ -264,9 +264,11 @@ output of R CMD check,things are going well.
    
 ### Now you're ready to make your change!
 
+Now you're ready to fix that typo... Remember, the `.R` file is the source, so 
+it's the only place we'll be fixing anything by hand.
 
 
-## OTHERS MAY DIFFER
+## Outside the Tidyverse YMMV
 
 Because the majority of R users work with the CRAN version of a package, 
 the documentation on tidyverse.org is _intentially_ out of sync with the source 
