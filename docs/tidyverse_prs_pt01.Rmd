@@ -197,8 +197,44 @@ machine.
 
 ![Clone repo from your dplyr fork](https://i.imgur.com/5wog86J.png)
 
+The subsequent steps will, for the most part, follow the [**Existing project, GitHub first**](http://happygitwithr.com/existing-github-first.html) chapter of Jenny 
+Bryan's Happy Git with R. From **File** >> **New Project**, you can clone your 
+copy of dplyr by putting the URL you copied from GitHub into the aptly-named 
+**Repository URL** field. You should open this up in a new R session, so be sure 
+to tick the appropriate radio button.
+
+![New project from Git in RStudio](https://i.imgur.com/aykqo2Z.png)
 
 
+### Branching and baseline
+
+In addition to cloning the files in the package, you should now have two "new" 
+tabs in your environement pane: **Build** and **Git**.
+
+![RStudio before and after cloning repo](https://i.imgur.com/4xUy3fY.png)
+
+In the **Git** tab, click on the icon with purple boxes to create a new 
+**branch**. It's nice to give it an informative name, for example: `summarise-typo`. 
+
+![Git branch icon](https://i.imgur.com/1miEAF9.png?1)
+
+Now you're ready to get your baseline using R CMD check. You can do this by 
+clicking on the **Check** icon in the **Build** tab. Note that this may take a 
+little while, which doesn't necessarily mean that anything's wrong. It's also 
+likely that there are some parameters passed to `devtools::check()`, which is 
+totally fine.
+
+![Check icon in RStudio Build pane](https://i.imgur.com/nKdQIgw.png)
+
+It's worth taking a look at the arguments, if only to help you undersand any 
+errors or warnings returned. For example, the warnings re. missing vignettes 
+aren't surprising, given `--no-build-vignettes` was passed as a `build_arg`.
+
+```{r eval = FALSE}
+devtools::check(build_args = c('--no-build-vignettes'))
+```
+
+![dplyr R CMD check results](https://i.imgur.com/Y6kSt2R.png)
 
 ## OTHERS MAY DIFFER
 
