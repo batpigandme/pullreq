@@ -168,9 +168,36 @@ the first few lines.
 
 This is a not-so-subtle hint that you should (wait for it) _not_ edit those files!
 
+For example, the typo _exists_ in `summarise.html`, but (even if you didn't know 
+about pkgdown and roxygen) you'd never edit that because it says `do not edit by 
+hand`. 
+
+![dplyr summarise.html](https://i.imgur.com/O0YNHzH.png)
+
 ### Over in the repo...
 
-If you search for the 
+For _most_ function references there will be an file `function.R`. However, if 
+go to the dplyr repo and to the `R/` folder, `summarise.R` isn't there! 
+
+![summarise.R doesn't exist](https://i.imgur.com/SS5Pk7I.png)
+
+But, since GitHub repos are searchable, we can just look for our text that way.[^2] 
+We've already covered `summarise.html` (namely, the fact that we won't be editing 
+it), so it looks like `manip.R` is source file.
+
+![dplyr repo search for "backend that supports"](https://i.imgur.com/fdzz1qY.png)
+
+## Your very own `dplyr`
+
+Though you _could_ edit the `.R` file from GitHub's web interface, the change 
+would only show up in one of three places (the `.R` file, but not in `.Rd`, or 
+`.html`). So your next move will be to **fork** dplyr. Now, from *your* dplyr repo 
+you'll get the proper URL so that you can **clone** the repo locally on your 
+machine.
+
+![Clone repo from your dplyr fork](https://i.imgur.com/5wog86J.png)
+
+
 
 
 ## OTHERS MAY DIFFER
@@ -192,5 +219,7 @@ devtools::document()
 [^1]: True confession: I really didn't understand where those `do not edit by hand` files came from until I did an rOpenSci [package review](https://ropensci.org/blog/2017/08/22/first-package-review/) for Nick Tierney's `r emo::ji_glue(":star2:")` [`visdat`](http://visdat.njtierney.com/). Which, yes, is totally one of the great reasons to sign up to do one, too!
 
 [^pkgdown]: You can learn about it much greater detail on the [`pkgdown` site](https://hadley.github.io/pkgdown/index.html)...which was rendered using, wait for it: pkgdown.
+
+[^2]: The same text is also found in the `summarise.Rd` file, but `.Rd` files do not show up in GitHub searches by default.
 
 
