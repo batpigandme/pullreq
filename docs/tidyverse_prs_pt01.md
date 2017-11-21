@@ -84,8 +84,8 @@ you'll need:
 
  * [roxygen2](https://github.com/klutometis/roxygen)
  * [devtools](https://github.com/hadley/devtools)
- * [pkgdown](https://hadley.github.io/pkgdown/index.html)
  * [testthat](http://testthat.r-lib.org/)
+ * [pkgdown](https://hadley.github.io/pkgdown/index.html)
 
 If you already know all about those packages and how to use them, you probably 
 don't need to be reading this. If you have heard those package names, and maybe
@@ -97,15 +97,16 @@ use devtools to install packages from non-CRAN sources, you're in the right plac
 Open scene: you're reading up on the `summarise.R` function in dplyr and notice 
 that there's an error in subject-verb agreement in the following fragment, 
 `"Data frames are the only backend that supports..."`. The subject 
-(data frame_s_) is plural, but the verb (support_s_) is singular.
+(data _frames_) is plural, but the verb (_supports_) is singular.
 
 You click on the GitHub icon, which takes you to the `dplyr` repo, but where are 
-you supposed to make your edit? The page you were looking at was `HTML`. 
-However, that HTML was the output of a different file. This means that, if you 
-modify the HTML file, the correction would show up in the product, but not its 
-source. The package maintainer would then have to either fix the source file by 
-hand, or risk losing the change the next time the website output is rendered. 
-The relationship is unidirectional.
+you supposed to make your edit? The page you were looking at was HTML. 
+However, that HTML was the output of a different file. 
+
+This means that, if you modify the HTML file, the correction would show up in 
+the product, but not its source. The package maintainer would then have to 
+either fix the source file by hand, or risk losing the change the next time the 
+website output is rendered. The relationship is unidirectional.
 
 ### A detour into `pkgdown` 
 
@@ -113,6 +114,8 @@ Here is (almost) everything you need to know about pkgdown for the purposes of
 this guide: it makes static HTML sites for R packages. It's special because it 
 leverages the pre-existing conventions for writing R documentation to render 
 these sites, so the content only needs to be edited in one place.[^pkgdown]
+
+![R to man/ to docs/](https://i.imgur.com/rI1zTnc.gif)
 
 Different components of a pkgdown site come from different parts of an R 
 package, some of which have already been rendered by 
