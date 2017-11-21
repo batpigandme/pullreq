@@ -49,10 +49,7 @@ output of a `README.Rmd`, if it exists. But with package documentation
 
 ![R Markdown document to Markdown document](https://i.imgur.com/tMR45VF.png)
 
-You don't need to be an R neophyte for the above to be true. True confession: I 
-really didn't understand where those `do not edit by hand` files came from until 
-I did an rOpenSci [package review](https://ropensci.org/blog/2017/08/22/first-package-review/)
-for Nick Tierney's 🌟 [`visdat`](http://visdat.njtierney.com/).[^1]
+You don't need to be an R neophyte for the above to be true.[^1]
 No one wins in this scenario. Nobody wants typos, and this kind of minor fix is 
 a great way to get familiar with the mechanics of making contributions. Plus, 
 I'd way rather have package maintainers working on those sweet feature requests 
@@ -148,7 +145,7 @@ package, some of which have already been rendered by
 I _highly_ recommend you take a quick look at Hilary Parker's 
 [_Writing an R package from scratch_](https://hilaryparker.com/2014/04/29/writing-an-r-package-from-scratch/) 
 as it covers the roxygen basics really well. (Heck, if you're not feeling up to 
-the five/six minutes of reading, just skim *Step 4*).
+the five/six minutes of reading, just skim **Step 4**).
 
 ### What about roxygen?
 
@@ -188,7 +185,7 @@ devtools::document()
 
 ----
 
-[^1]: Which, yes, is totally one of the great reasons to sign up to do one, too!
+[^1]: True confession: I really didn't understand where those `do not edit by hand` files came from until I did an rOpenSci [package review](https://ropensci.org/blog/2017/08/22/first-package-review/) for Nick Tierney's 🌟 [`visdat`](http://visdat.njtierney.com/). Which, yes, is totally one of the great reasons to sign up to do one, too!
 
 [^pkgdown]: You can learn about it much greater detail on the [`pkgdown` site](https://hadley.github.io/pkgdown/index.html)...which was rendered using, wait for it: pkgdown.
 
