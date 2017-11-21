@@ -1,7 +1,7 @@
 ---
 title: "PRs in the Tidyverse: Part 1"
 author: "Mara Averick"
-date: "2017-11-20"
+date: "2017-11-21"
 output:
   html_document:
     keep_md: TRUE
@@ -9,12 +9,23 @@ output:
 
 
 
+## TL;DR
+
+**The Big Picture**: Documentation should always be fixed at its source. For 
+object documentation in the tidyverse, this means the `.R` files. 
+
+From the GitHub repo, your workflow should be: `fork`, `clone`, `check`, 
+`branch`, `edit`, render using `document()`, `check`, `push`, `PR`.
+
+
+
+
 ```
 Dear Sir or Madam Maintainer,
 
-Whence I was reviewing your package documentation, I came upon a grammatical flaw
-in your prose. This was ever so troubling. I recommend you look at the fifth 
-line down in the third paragraph of the...
+Whence I was reviewing your package documentation, I came upon a grammatical 
+flaw in your prose. This was ever so troubling. 
+I recommend you look at the fifth line down in the third paragraph of the...
 
 Ever so humbly yours,
 
@@ -25,7 +36,7 @@ This document is an effort to avoid the scenario above. Though Yihui Xie's
 [You Do Not Need to Tell Me I Have A Typo in My Documentation](https://yihui.name/en/2013/06/fix-typo-in-documentation/) is right
 on many levels. 
 
-![Source: You Do Not Need to Tell Me I Have A Typo in My Documentation by Yihui Xie](https://i.imgur.com/nKeGYGz.png)  
+![Source: You Do Not Need to Tell Me I Have A Typo in My Documentation by Yihui Xie](https://i.imgur.com/DSoPppa.png)  
 
 
 But, I've also been on the other side of the screen: seeing a typo, 
@@ -151,8 +162,9 @@ or in documentation is a function reference).
 ![R to Rd](https://i.imgur.com/MzZiB2h.gif)
 
 Both roxygen2- and pkgdown-generated documents will say `"do not edit..."` in 
-the first few lines. This warning should be heeded, and you should not, in fact 
-edit those documents by hand!
+the first few lines. 
+
+This is a not-so-subtle hint that you should (wait for it) _not_ edit those files!
 
 ### Over in the repo...
 
