@@ -1,11 +1,14 @@
 ---
 title: "PRs in the Tidyverse: Part 1"
 author: "Mara Averick"
-date: "2017-11-21"
+date: "2017-11-24"
 output:
   html_document:
     keep_md: TRUE
 ---
+
+
+
 
 
 
@@ -15,7 +18,7 @@ output:
 object documentation in the tidyverse, this means the `.R` files. 
 
 From the GitHub repo, your workflow should be: `fork`, `clone`, `check`, 
-`branch`, `edit`, render using `document()`, `check`, `push`, `PR`.
+(`branch`), `edit`, render using `document()`, `check`, `push`, `PR`.
 
 
 
@@ -156,13 +159,32 @@ It's well worth your time to learn about roxygen2, as you'll need it if and/or
 when you decide to develop your _own_ package. But, big picture: it takes 
 specially formatted comments from the R source codes and turns them into `.Rd` 
 files for package documentation (i.e. the stuff that shows up in the viewer 
-pane when you type in `?function`). (Though not everything you read on a pkgdown site 
-or in documentation is a function reference).
+pane when you type in `?function`). Below are the comments for a function that 
+adds two numbers (taken from Hadley Wickhams's [Generating Rd Files](https://cran.r-project.org/web/packages/roxygen2/vignettes/rd.html) 
+vignette for roxygen2).
+
+
+```r
+#' Add together two numbers
+#'
+#' @param x A number
+#' @param y A number
+#' @return The sum of \code{x} and \code{y}
+#' @examples
+#' add(1, 1)
+#' add(10, 1)
+add <- function(x, y) {
+  x + y
+}
+```
+
+Function references are just one part of a pkgdown site/package documentation, 
+but it's whats in our example. So...
 
 ![R to Rd](https://i.imgur.com/MzZiB2h.gif)
 
-Both roxygen2- and pkgdown-generated documents will say `"do not edit..."` in 
-the first few lines. 
+Both roxygen2- and pkgdown-generated documents will say `"do not edit..."` on 
+the first or second line.
 
 This is a not-so-subtle hint that you should (wait for it) _not_ edit those files!
 
@@ -227,7 +249,7 @@ little while, which doesn't necessarily mean that anything's wrong. It's also
 likely that there are some parameters passed to `devtools::check()`, which is 
 totally fine.
 
-![Check icon in RStudio Build pane](https://i.imgur.com/MNhJIXQ.png)
+![Check icon in RStudio Build pane](/Users/maraaverick/pullreq/docs/imgs/build_check_button.png)
 
 It's worth taking a look at the arguments, if only to help you understand any 
 errors or warnings returned. For example, the warnings re. missing vignettes 
@@ -238,7 +260,7 @@ aren't surprising, given `--no-build-vignettes` was passed as a `build_arg`.
 devtools::check(build_args = c('--no-build-vignettes'))
 ```
 
-![dplyr R CMD check results](https://i.imgur.com/Y6kSt2R.png)
+![dplyr R CMD check results](/Users/maraaverick/pullreq/docs/imgs/dplyr_cmd_check.png)
 
 #### Frequently found failures
 
@@ -263,9 +285,11 @@ output of R CMD check,things are going well.
    
 ### Now you're ready to make your change!
 
+Now you're ready to fix that typo... Remember, the `.R` file is the source, so 
+it's the only place we'll be fixing anything by hand.
 
 
-## OTHERS MAY DIFFER
+#### n.b. outside of the Tidyverse YMMV
 
 Because the majority of R users work with the CRAN version of a package, 
 the documentation on tidyverse.org is _intentially_ out of sync with the source 
