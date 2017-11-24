@@ -199,7 +199,7 @@ hand`.
 For _most_ function references there will be an file `function.R`. However, if 
 go to the dplyr repo and to the `R/` folder, `summarise.R` isn't there! 
 
-![summarise.R doesn't exist](https://i.imgur.com/0RPDcNl.png)
+![summarise.R doesn't exist](/Users/maraaverick/pullreq/docs/imgs/no_summarise_r_file.png)
 
 But, since GitHub repos are searchable, we can just look for our text that way.[^2] 
 We've already covered `summarise.html` (namely, the fact that we won't be editing 
@@ -238,7 +238,7 @@ tabs in your environment pane: **Build** and **Git**.
 In the **Git** tab, click on the icon with purple boxes to create a new 
 **branch**. It's nice to give it an informative name, for example: `summarise-typo`. 
 
-![Git branch icon](https://i.imgur.com/1miEAF9.png?1)
+![Git branch icon](/Users/maraaverick/pullreq/docs/imgs/local_git_branch.png)
 
 
 ### CMD Check
@@ -266,15 +266,15 @@ devtools::check(build_args = c('--no-build-vignettes'))
 
  * Missing packages. Solution? Install the packages.
  
- ![Missing suggested packages](https://i.imgur.com/xXbiXPp.png)
+ ![Missing suggested packages](/Users/maraaverick/pullreq/docs/imgs/dplyr_cmd_check_old.png)
  
- * Assorted things totally unrelated to what I'm trying to fix...
+ * Assorted things totally unrelated to what I'm trying to fix
  
    + Go back to the package repo and click on the `build` badge, this 
    will take you to Travis CI, where you can see the logs from the most recent 
    build of the package, including the output of `R CMD check`
    
-   ![Travis CI R CMD check](https://i.imgur.com/KFkBuC0.png)
+   ![Travis CI R CMD check](/Users/maraaverick/pullreq/docs/imgs/travis_build_dplyr.png)
    
    + If you're fixing something in a function reference (like this example), try 
    running `devtools::check_man()` and see what happens. 
