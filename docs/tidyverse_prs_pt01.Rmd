@@ -270,7 +270,7 @@ devtools::check(build_args = c('--no-build-vignettes'))
  
  ![Missing suggested packages](https://i.imgur.com/xXbiXPp.png)
  
- * Assorted things totally unrelated to what I'm trying to fix...
+ * Assorted things totally unrelated to what I'm trying to fix
  
    + Go back to the package repo and click on the `build` badge, this 
    will take you to Travis CI, where you can see the logs from the most recent 
