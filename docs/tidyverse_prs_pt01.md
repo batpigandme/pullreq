@@ -90,9 +90,10 @@ you'll need:
  * [testthat](http://testthat.r-lib.org/)
  * [pkgdown](https://hadley.github.io/pkgdown/index.html)
 
-If you already know all about those packages and how to use them, you probably 
+If you already know all about those packages and how to use them, you probably
 don't need to be reading this. If you have heard those package names, and maybe
-use devtools to install packages from non-CRAN sources, you're in the right place.
+use devtools to install packages from non-CRAN sources, you're in the right
+place.
 👍
 
 ## Where do typos come from?
@@ -287,8 +288,8 @@ output of R CMD check,things are going well.
 
 Now you're ready to fix that typo... Remember, the `.R` file is the source,
 so it's the only place we'll be fixing anything by hand. Once you've edited
-`manip.R`, you'll run `devtools::document()`, which will create the downstream
-files, including `summarise.Rd`.
+`manip.R`, you'll run `devtools::document()`, which will create downstream
+documentation files, including `summarise.Rd`.
 
 You'll then reload your library.
 
@@ -302,24 +303,50 @@ from the first time around. You can even just click the **Check** icon.
 
 #### n.b. outside of the Tidyverse YMMV
 
-Because the majority of R users work with the CRAN version of a package, 
-the documentation on tidyverse.org is _intentially_ out of sync with the source 
-code under development. 
+Because the majority of R users work with the CRAN version of a package, the
+documentation on tidyverse.org is _intentially_ out of sync with the source code
+under development.
 
+Other maintainers may prefer `pkgdown::build_site()`, so it's worth asking if
+it's not clear based on a repo or project's contributing guidelines.
 
-```r
-devtools::document()
-```
+### Git going
 
+Now you can navigate to the appropriate **Git** UI either by using the Git
+pulldown menu and selecting **Commit** or by clicking on either the **Diff** or
+**Commit** buttons in the Git tab in your environment pane.
 
+You will then see an interface that includes all of the files you have added,
+deleted, or edited; as well as a space in which you can write your Git commit
+message. The art of the [perfect commit message](https://wiki.openstack.org/
+wiki/GitCommitMessages) is heavily documented, but, for now, just focus on
+something short (fewer than 50 characters) that starts with a verb and describes
+what you did. If you need to add more details, there will be space for that when
+you make your pull request.
 
+![Git diff and commit pane in RStudio](/Users/maraaverick/pullreq/docs/imgs/rstudio_git_diff.png)
+
+Once you're happy with your message, and have made sure that you've only changed
+the files you intended to, go ahead and hit the **Commit** button.
+
+![Git commit from RStudio](/Users/maraaverick/pullreq/docs/imgs/rstudio_git_commit.png)
+
+And, finally, you'll be ready to `git push`.
+
+![Git push from RStudio](/Users/maraaverick/pullreq/docs/imgs/git_push.png)
 
 ----
 
-[^1]: True confession: I really didn't understand where those `do not edit by hand` files came from until I did an rOpenSci [package review](https://ropensci.org/blog/2017/08/22/first-package-review/) for Nick Tierney's 🌟 [`visdat`](http://visdat.njtierney.com/). Which, yes, is totally one of the great reasons to sign up to do one, too!
+[^1]: True confession: I really didn't understand where those `do not edit
+by hand` files came from until I did an rOpenSci [package review](https://
+ropensci.org/blog/2017/08/22/first-package-review/) for Nick Tierney's
+🌟 [`visdat`](http://visdat.njtierney.com/). Which,
+yes, is totally one of the great reasons to sign up to do one, too!
 
-[^pkgdown]: You can learn about it much greater detail on the [`pkgdown` site](https://hadley.github.io/pkgdown/index.html)...which was rendered using, wait for it: pkgdown.
+[^pkgdown]: You can learn about it much greater detail on the [`pkgdown` site](https://hadley.github.io/pkgdown/index.html)...which was rendered using, wait
+for it: pkgdown.
 
-[^2]: The same text is also found in the `summarise.Rd` file, but `.Rd` files do not show up in GitHub searches by default.
+[^2]: The same text is also found in the `summarise.Rd` file, but `.Rd` files do
+not show up in GitHub searches by default.
 
 
