@@ -1,7 +1,7 @@
 ---
 title: "PRs in the Tidyverse: Part 1"
 author: "Mara Averick"
-date: "2017-11-24"
+date: "2017-11-26"
 output:
   html_document:
     keep_md: TRUE
@@ -39,7 +39,7 @@ This document is an effort to avoid the scenario above. Though Yihui Xie's
 [You Do Not Need to Tell Me I Have A Typo in My Documentation](https://yihui.name/en/2013/06/fix-typo-in-documentation/) is right
 on many levels. 
 
-![Source: You Do Not Need to Tell Me I Have A Typo in My Documentation by Yihui Xie](https://i.imgur.com/DSoPppa.png)  
+![Source: You Do Not Need to Tell Me I Have A Typo in My Documentation by Yihui Xie](/Users/maraaverick/pullreq/docs/imgs/yihui_typos.png)  
 
 
 But, I've also been on the other side of the screen: seeing a typo, 
@@ -50,7 +50,7 @@ In some instances, this isn't the case— I know that a `README.md` file is the
 output of a `README.Rmd`, if it exists. But with package documentation 
 (vignettes, pkgdown sites, etc) it's not as readily apparent.
 
-![R Markdown document to Markdown document](https://i.imgur.com/tMR45VF.png)
+![R Markdown README to Markdown README](/Users/maraaverick/pullreq/docs/imgs/readme_rmd_to_md.png)
 
 You don't need to be an R neophyte for the above to be true.[^1]
 No one wins in this scenario. Nobody wants typos, and this kind of minor fix is 
@@ -192,7 +192,7 @@ For example, the typo _exists_ in `summarise.html`, but (even if you didn't know
 about pkgdown and roxygen) you'd never edit that because it says `do not edit by 
 hand`. 
 
-![dplyr summarise.html](https://i.imgur.com/IbnUa7W.png)
+![dplyr summarise.html](/Users/maraaverick/pullreq/docs/imgs/summarise_html_combo.png)
 
 ### Over in the repo...
 
@@ -205,7 +205,7 @@ But, since GitHub repos are searchable, we can just look for our text that way.[
 We've already covered `summarise.html` (namely, the fact that we won't be editing 
 it), so it looks like `manip.R` is source file.
 
-![dplyr repo search for "backend that supports"](https://i.imgur.com/fdzz1qY.png)
+![dplyr repo search for "backend that supports"](/Users/maraaverick/pullreq/docs/imgs/repo_search_text.png)
 
 ## Your very own `dplyr`
 
@@ -215,7 +215,7 @@ would only show up in one of three places (the `.R` file, but not in `.Rd`, or
 you'll get the proper URL so that you can **clone** the repo locally on your 
 machine.
 
-![Clone repo from your dplyr fork](https://i.imgur.com/5wog86J.png)
+![Clone repo from your dplyr fork](/Users/maraaverick/pullreq/docs/imgs/clone_repo.png)
 
 The subsequent steps will, for the most part, follow the [**Existing project, GitHub first**](http://happygitwithr.com/existing-github-first.html) chapter of Jenny 
 Bryan's Happy Git with R. From **File** >> **New Project**, you can clone your 
@@ -223,7 +223,7 @@ copy of dplyr by putting the URL you copied from GitHub into the aptly-named
 **Repository URL** field. You should open this up in a new R session, so be sure 
 to tick the appropriate radio button.
 
-![New project from Git in RStudio](https://i.imgur.com/aykqo2Z.png)
+![New project from Git in RStudio](/Users/maraaverick/pullreq/docs/imgs/new_r_project_from_git.png)
 
 
 ### Branching and baseline
@@ -231,7 +231,7 @@ to tick the appropriate radio button.
 In addition to cloning the files in the package, you should now have two "new" 
 tabs in your environment pane: **Build** and **Git**.
 
-![RStudio before and after cloning repo](https://i.imgur.com/4xUy3fY.png)
+![RStudio before and after cloning repo](/Users/maraaverick/pullreq/docs/imgs/before_after_new_proj.png)
 
 ### Optional: branch out
 
