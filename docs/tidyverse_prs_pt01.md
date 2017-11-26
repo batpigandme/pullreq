@@ -249,7 +249,7 @@ little while, which doesn't necessarily mean that anything's wrong. It's also
 likely that there are some parameters passed to `devtools::check()`, which is 
 totally fine.
 
-![Check icon in RStudio Build pane](/Users/maraaverick/pullreq/docs/imgs/build_check_button.png)
+ + ![Check icon in RStudio Build pane](/Users/maraaverick/pullreq/docs/imgs/build_check_button.png)
 
 It's worth taking a look at the arguments, if only to help you understand any 
 errors or warnings returned. For example, the warnings re. missing vignettes 
@@ -285,16 +285,26 @@ output of R CMD check,things are going well.
    
 ### Now you're ready to make your change!
 
-Now you're ready to fix that typo... Remember, the `.R` file is the source, so 
-it's the only place we'll be fixing anything by hand.
+Now you're ready to fix that typo... Remember, the `.R` file is the source,
+so it's the only place we'll be fixing anything by hand. Once you've edited
+`manip.R`, you'll run `devtools::document()`, which will create the downstream
+files, including `summarise.Rd`.
 
+You'll then reload your library.
+
+![Command history from checking, editing, and rebuilding dplyr documentation](/Users/maraaverick/pullreq/docs/imgs/command_history.png)
+
+That done, you can now run `devtools::check()` _again_, to ensure your changes
+haven't introduced any new errors. Don't forget to keep the same `build_args`
+from the first time around. You can even just click the **Check** icon.
+
+![Check updated package](/Users/maraaverick/pullreq/docs/imgs/devtools_check.png)
 
 #### n.b. outside of the Tidyverse YMMV
 
 Because the majority of R users work with the CRAN version of a package, 
 the documentation on tidyverse.org is _intentially_ out of sync with the source 
-code under development. Other package developers and maintainers may differ on 
-this, depending on their respective workflows.
+code under development. 
 
 
 ```r
