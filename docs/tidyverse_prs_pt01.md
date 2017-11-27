@@ -15,11 +15,22 @@ output:
 ## TL;DR
 
 **The Big Picture**: Documentation should always be fixed at its source. For 
-object documentation in the tidyverse, this means making changes in `.R` files. 
+function references in the tidyverse, this means making changes in `.R` files. 
 
-From the GitHub repo, your workflow should be: `fork`, `clone`, `check`, 
-(`branch`), `edit`, render using `devtools::document()`, `check`, `push`, `PR`.
+Starting from the GitHub repo of the target package (in this case, dplyr), this
+will take you through the following workflow:
 
+  * Fork
+  * Clone
+  * Check
+  * (Branch)
+  * Edit
+  * Render (using `devtools::document()`)
+  * Check
+  * Commit/Push
+  * Submit
+
+## Preamble-y
 
 ```
 Dear Sir or Madam Maintainer,
@@ -33,28 +44,26 @@ Ever so humbly yours,
 Rando
 ```
 
-This document is an effort to avoid the scenario above. Though Yihui Xie's 
-[You Do Not Need to Tell Me I Have A Typo in My Documentation](https://yihui.name/en/2013/06/fix-typo-in-documentation/) is right
-on many levels. 
+This document is an effort to avoid the scenario above. Yihui Xie's [You Do Not Need to Tell Me I Have A Typo in My Documentation](https://yihui.name/en/2013/06/fix-typo-in-documentation/) 
+is right on many levels, but, if you're unfamiliar with the inner workings of an 
+R package, this is easier said than done.
 
 ![Source: You Do Not Need to Tell Me I Have A Typo in My Documentation by Yihui Xie](/Users/maraaverick/pullreq/docs/imgs/yihui_typos.png)  
 
 
-But, I've also been on the other side of the screen: seeing a typo, and
-wanting to fix it without hassling the maintainers, but have given up half-way
-through because I didn't know _where_ to make the change it. I know the correct
-answer is _somewhere_ upstream, but I might not be exactly sure where. In some
-instances, this isn't the case— I know that a `README.md` file is the output of
-a `README.Rmd`, if it exists. But with package documentation (vignettes, pkgdown
-sites, etc) it's not as readily apparent.
+In learning R, I've encountered this scenario several times: seeing a typo,
+and wanting to fix it without hassling the maintainers, but giving up half-way
+through because I wasn't sure _where_ to make the change(s). The correct answer
+is _somewhere_ upstream. With the proliferation of R Markdown, many R neophytes
+will know that a `README.md` file is the output of a `README.Rmd`, if it exists.
+But with package documentation (vignettes, pkgdown sites, etc) this is not as
+readily apparent.
 
 ![R Markdown README to Markdown README](/Users/maraaverick/pullreq/docs/imgs/readme_rmd_to_md.png)
 
-You don't need to be an R neophyte for the above to be true.[^1] No one wins in
-this scenario. Nobody wants typos, and this kind of minor fix is a great way to
-get familiar with the mechanics of making contributions. Plus, I'd way rather
-have package maintainers working on those sweet feature requests I submitted
-than hunting around for a renegade letter or two in the function reference.
+You don't need to be new to R for the circumstances described above to occur.[^1] 
+No one wins in this scenario. Nobody wants typos, and making this kind of minor
+fix is a great way to get familiar with the mechanics of making contributions.[^sweet_feats]
 
 An alternate title to this could've been **Packages for people who don't
 actually want to write packages**. Expect hand-waiving and references to magic,
@@ -74,11 +83,12 @@ want to learn more about these things, I highly recommend checking out
 (a work in progress, freely available online).
 
 There are many great guides on contributing to open-source projects in general,
-and this is intended as a complement those guides. This is meant to make the 
-existing [tidyverse contribution guidelines](https://www.tidyverse.org/contribute/),
-and [The tidyverse style guide](http://style.tidyverse.org/) more accessible. It's also worth visiting Jim Hester's post, [Contributing code to the tidyverse](https://www.tidyverse.org/articles/2017/08/contributing/), regardless of
-whether or not you plan to change a single letter, or help implement a more
-substantive change.
+and this is intended as a complement those guides. This is meant to make
+the existing [tidyverse contribution guidelines](https://www.tidyverse.org/contribute/), 
+and [The tidyverse style guide](http://style.tidyverse.org/)
+more accessible. It's also worth visiting Jim Hester's post, [Contributing code to the tidyverse](https://www.tidyverse.org/articles/2017/08/contributing/),
+regardless of whether or not you plan to change a single letter, or help with
+implementing a major modification.
 
 In addition to the [tidyverse packages](https://www.tidyverse.org/packages/), 
 you'll need:  
@@ -152,14 +162,13 @@ I _highly_ recommend you take a quick look at Hilary Parker's
 as it covers the roxygen2 basics really well. (If you're not feeling up to 
 the five/six minutes of reading, just skim **Step 4**).
 
-### What about roxygen?
 
-It's well worth your time to learn about roxygen2, as you'll need it if and/or 
-when you decide to develop your _own_ package. But, big picture: it takes 
-specially formatted comments from the R source codes and turns them into `.Rd` 
-files for package documentation (i.e. the stuff that shows up in the viewer 
-pane when you type in `?function`). Below are the comments for a function that 
-adds two numbers (taken from Hadley Wickhams's [Generating Rd Files](https://cran.r-project.org/web/packages/roxygen2/vignettes/rd.html) 
+Learning about roxygen2 will also benefit you later on, as you'll need it if
+and/or when you decide to develop your _own_ package. But, big picture: it takes
+specially formatted comments from the R source codes and turns them into `.Rd`
+files for package documentation (i.e. the stuff that shows up in the viewer pane
+when you type in `?function`). Below are the comments for a function that adds
+two numbers (taken from Hadley Wickhams's [Generating Rd Files](https://cran.r-project.org/web/packages/roxygen2/vignettes/rd.html) 
 vignette for roxygen2).
 
 
@@ -385,7 +394,20 @@ in feedback or merging as a lack of appreciation. Documentation copy-edits are
 valuable, and are hard to see when you've written or read something too many
 times. So, your fresh eyes are invaluable.
 
+### Errata
 
+#### What are the little icons next to the pull requests?
+
+The three icons (green check, red x, and yellow circle) indicate the build
+status of the repository with the changes you've made from [Travis CI](https://travis-ci.org/) and/or [AppVeyor](https://www.appveyor.com/).
+
+![Pull request icons indicating build status](/Users/maraaverick/pullreq/docs/imgs/build_status.png)
+
+For the most part, you do not need to worry about these if you've made small
+changes. If you're curious about what they mean, you _can_ click on the icon and
+figure out which, if any, builds failed.
+
+![GitHub pull request build status](/Users/maraaverick/pullreq/docs/imgs/pr_build_status.png)
 
 
 [^1]: True confession: I really didn't understand where those `do not edit
@@ -409,3 +431,7 @@ in the repo, I recommend reading [**Making a pull request**](https://github.com/
 
 [^rstudio_roxygen]: For a brief, visual overview of some of the RStudio-roxygen2 
 integration features, see [Writing Package Documentation](https://support.rstudio.com/hc/en-us/articles/200532317-Writing-Package-Documentation) from RStudio Support.
+
+[^sweet_feats]: Plus, I'd way rather have package maintainers working on those
+sweet feature requests I submitted than hunting around for a renegade letter or
+two in the function reference.
