@@ -205,10 +205,13 @@ go to the dplyr repo and to the `R/` folder, `summarise.R` isn't there!
 ![summarise.R doesn't exist](`r here::here("docs", "imgs", "no_summarise_r_file.png")`)
 
 But, since GitHub repos are searchable, we can just look for our text that way.[^2] 
+
+![dplyr repo search for "backend that supports"](`r here::here("docs", "imgs", "repo_search_text.png")`)
+
 We've already covered `summarise.html` (namely, the fact that we won't be editing 
 it), so it looks like `manip.R` is source file.
 
-![dplyr repo search for "backend that supports"](`r here::here("docs", "imgs", "repo_search_text.png")`)
+!["...backend that supports" in `manip.R`](`r here::here("docs", "imgs", "manipr_top_bottom.png")`)
 
 ## Your very own `dplyr`
 
