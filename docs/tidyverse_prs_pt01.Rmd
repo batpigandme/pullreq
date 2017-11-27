@@ -387,7 +387,20 @@ in feedback or merging as a lack of appreciation. Documentation copy-edits are
 valuable, and are hard to see when you've written or read something too many
 times. So, your fresh eyes are invaluable.
 
+### Errata
 
+#### What are the little icons next to the pull requests?
+
+The three icons (green check, red x, and yellow circle) indicate the build
+status of the repository with the changes you've made from [Travis CI](https://travis-ci.org/) and/or [AppVeyor](https://www.appveyor.com/).
+
+![Pull request icons indicating build status](`r here::here("docs", "imgs", "build_status.png")`)
+
+For the most part, you do not need to worry about these if you've made small
+changes. If you're curious about what they mean, you _can_ click on the icon and
+figure out which, if any, builds failed.
+
+![GitHub pull request build status](`r here::here("docs", "imgs", "pr_build_status.png")`)
 
 
 [^1]: True confession: I really didn't understand where those `do not edit
