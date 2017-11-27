@@ -24,15 +24,15 @@ function references in the tidyverse, this means making changes in `.R` files.
 Starting from the GitHub repo of the target package (in this case, dplyr), this
 will take you through the following workflow:
 
-  * Fork
-  * Clone
-  * Check
-  * (Branch)
-  * Edit
-  * Render (using `devtools::document()`)
-  * Check
-  * Commit/Push
-  * Submit
+  * Fork `r icon::fa("code-fork")`
+  * Clone `r icon::fa("clone")`
+  * Check `r icon::fa("check-circle-o")`
+  * (Branch) `r icon::fa("share-alt")`
+  * Edit `r icon::fa("pencil")`
+  * Render (using `devtools::document()`) `r icon::fa("file")`
+  * Check `r icon::fa("check-circle-o")`
+  * Commit/Push `r icon::fa("upload")`
+  * Submit `r icon::fa("star")`
 
 ## Preamble-y
 

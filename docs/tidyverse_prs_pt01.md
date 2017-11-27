@@ -20,15 +20,15 @@ function references in the tidyverse, this means making changes in `.R` files.
 Starting from the GitHub repo of the target package (in this case, dplyr), this
 will take you through the following workflow:
 
-  * Fork
-  * Clone
-  * Check
-  * (Branch)
-  * Edit
-  * Render (using `devtools::document()`)
-  * Check
-  * Commit/Push
-  * Submit
+  * Fork <!--html_preserve--><i class="fa  fa-code-fork "></i><!--/html_preserve-->
+  * Clone <!--html_preserve--><i class="fa  fa-clone "></i><!--/html_preserve-->
+  * Check <!--html_preserve--><i class="fa  fa-check-circle-o "></i><!--/html_preserve-->
+  * (Branch) <!--html_preserve--><i class="fa  fa-share-alt "></i><!--/html_preserve-->
+  * Edit <!--html_preserve--><i class="fa  fa-pencil "></i><!--/html_preserve-->
+  * Render (using `devtools::document()`) <!--html_preserve--><i class="fa  fa-file "></i><!--/html_preserve-->
+  * Check <!--html_preserve--><i class="fa  fa-check-circle-o "></i><!--/html_preserve-->
+  * Commit/Push <!--html_preserve--><i class="fa  fa-upload "></i><!--/html_preserve-->
+  * Submit <!--html_preserve--><i class="fa  fa-star "></i><!--/html_preserve-->
 
 ## Preamble-y
 
