@@ -15,12 +15,10 @@ output:
 ## TL;DR
 
 **The Big Picture**: Documentation should always be fixed at its source. For 
-object documentation in the tidyverse, this means the `.R` files. 
+object documentation in the tidyverse, this means making changes in `.R` files. 
 
 From the GitHub repo, your workflow should be: `fork`, `clone`, `check`, 
 (`branch`), `edit`, render using `devtools::document()`, `check`, `push`, `PR`.
-
-
 
 
 ```
@@ -78,8 +76,9 @@ want to learn more about these things, I highly recommend checking out
 There are many great guides on contributing to open-source projects in general,
 and this is intended as a complement those guides. This is meant to make the 
 existing [tidyverse contribution guidelines](https://www.tidyverse.org/contribute/),
-and [The tidyverse style guide](http://style.tidyverse.org/) more accessible, 
-and not to replace them. 
+and [The tidyverse style guide](http://style.tidyverse.org/) more accessible. It's also worth visiting Jim Hester's post, [Contributing code to the tidyverse](https://www.tidyverse.org/articles/2017/08/contributing/), regardless of
+whether or not you plan to change a single letter, or help implement a more
+substantive change.
 
 In addition to the [tidyverse packages](https://www.tidyverse.org/packages/), 
 you'll need:  
@@ -150,7 +149,7 @@ package, some of which have already been rendered by
 
 I _highly_ recommend you take a quick look at Hilary Parker's 
 [_Writing an R package from scratch_](https://hilaryparker.com/2014/04/29/writing-an-r-package-from-scratch/) 
-as it covers the roxygen basics really well. (Heck, if you're not feeling up to 
+as it covers the roxygen2 basics really well. (If you're not feeling up to 
 the five/six minutes of reading, just skim **Step 4**).
 
 ### What about roxygen?
@@ -179,14 +178,15 @@ add <- function(x, y) {
 ```
 
 Function references are just one part of a pkgdown site/package documentation, 
-but it's whats in our example. So...
+but it's whats in our example.[^rstudio_roxygen]
 
 ![R to Rd](https://i.imgur.com/MzZiB2h.gif)
 
 Both roxygen2- and pkgdown-generated documents will say `"do not edit..."` on 
 the first or second line.
 
-This is a not-so-subtle hint that you should (wait for it) _not_ edit those files!
+This is a not-so-subtle hint that you should (wait for it) _not_ edit those
+files!
 
 For example, the typo _exists_ in `summarise.html`, but (even if you didn't know 
 about pkgdown and roxygen) you'd never edit that because it says `do not edit by 
@@ -202,10 +202,13 @@ go to the dplyr repo and to the `R/` folder, `summarise.R` isn't there!
 ![summarise.R doesn't exist](/Users/maraaverick/pullreq/docs/imgs/no_summarise_r_file.png)
 
 But, since GitHub repos are searchable, we can just look for our text that way.[^2] 
-We've already covered `summarise.html` (namely, the fact that we won't be editing 
-it), so it looks like `manip.R` is source file.
 
 ![dplyr repo search for "backend that supports"](/Users/maraaverick/pullreq/docs/imgs/repo_search_text.png)
+
+We've already covered `summarise.html` (namely, the fact that we won't be
+editing it), so it looks like `manip.R` is source file we're after.
+
+!["...backend that supports" in `manip.R`](/Users/maraaverick/pullreq/docs/imgs/manipr_top_bottom.png)
 
 ## Your very own `dplyr`
 
@@ -233,7 +236,7 @@ tabs in your environment pane: **Build** and **Git**.
 
 ![RStudio before and after cloning repo](/Users/maraaverick/pullreq/docs/imgs/before_after_new_proj.png)
 
-### Optional: branch out
+#### Optional: branch out
 
 In the **Git** tab, click on the icon with purple boxes to create a new 
 **branch**. It's nice to give it an informative name, for example: `summarise-typo`. 
@@ -319,8 +322,11 @@ it's not clear based on a repo or project's contributing guidelines.
 ### Git going
 
 Now you can navigate to the appropriate **Git** UI either by using the Git
-pulldown menu and selecting **Commit** or by clicking on either the **Diff** or
-**Commit** buttons in the Git tab in your environment pane.[^shortcuts]
+pulldown menu and selecting **Commit** or by clicking on either the **Diff**
+or **Commit** buttons in the Git tab in your environment pane. You can also use
+keyboard shortcuts to take you to the same place.[^shortcuts]
+
+![RStudio Version Control Keyboard Shortcuts](/Users/maraaverick/pullreq/docs/imgs/rstudio_git_shortcuts.png)
 
 You will then see an interface that includes all of the files you have added,
 deleted, or edited; as well as a space in which you can write your Git commit
@@ -341,7 +347,46 @@ And, finally, you'll be ready to `git push`.
 
 ![Git push from RStudio](/Users/maraaverick/pullreq/docs/imgs/git_push.png)
 
-----
+### Readying your Pull Request
+
+Time to go back to your GitHub repo and make sure everything is as it should be.
+Click on **Compare** to view the changes you've made— these should be identical
+to the changes you saw in the Git diff view in RStudio.
+
+![GitHub Compare](/Users/maraaverick/pullreq/docs/imgs/github_compare_button.png)
+
+Depending on whether or not you used a branching workflow, you can look at the
+split view to see changes as compared to either your master branch, or to the
+`tidyverse/dplyr` master branch.
+
+![GitHub split-view diff](/Users/maraaverick/pullreq/docs/imgs/github_splitview_diff.png)
+
+You can get to a similar interface by clicking on **Compare & pull request**.
+
+![GitHub Compare & pull request](/Users/maraaverick/pullreq/docs/imgs/git_patch_ui.png)
+
+Once you're satisfied that your changes are as they should be, you're ready
+to submit your pull request to the master repo (in this case, [**tidyverse/dplyr**](https://github.com/tidyverse/dplyr)). Since this PR is a 
+simple typo fix, the pull-request title will probably suffice for what you need 
+to say.[^gd_making_a_pr] Make sure that the appropriate base and head forks are
+selected before submitting your PR.
+
+![Selecting a base fork and a head fork when submitting a pull request on GitHub](/Users/maraaverick/pullreq/docs/imgs/base_fork_head_fork_pr.png)
+
+### Pull has been requested
+
+It's official, your pull request has been submitted. 🎉
+
+![dplyr open pull requests](/Users/maraaverick/pullreq/docs/imgs/dplyr_open_prs.png)
+
+Now what? Well, it may take some time for your PR to be reviewed. Tidyverse
+projects tend to be developed in waves, and you shouldn't interpret any lag time
+in feedback or merging as a lack of appreciation. Documentation copy-edits are
+valuable, and are hard to see when you've written or read something too many
+times. So, your fresh eyes are invaluable.
+
+
+
 
 [^1]: True confession: I really didn't understand where those `do not edit
 by hand` files came from until I did an rOpenSci [package review](https://
@@ -356,7 +401,11 @@ for it: pkgdown.
 not show up in GitHub searches by default.
 
 [^shortcuts]: There are also some useful keyboard shortcuts you can use. Check
-out the [RStudio IDE Cheat Sheet](https://github.com/rstudio/cheatsheets/raw/
-master/rstudio-ide.pdf) or go to the **Tools** menu, and select **Keyboard
-Shortcuts Help** for a helpful list.
+out the [RStudio IDE Cheat Sheet](https://github.com/rstudio/cheatsheets/raw/master/rstudio-ide.pdf) or go to the **Tools** menu, and select **Keyboard Shortcuts Help** for a helpful list.
 
+[^gd_making_a_pr]: For more substantive changes, and/or patches fixing an issue
+in the repo, I recommend reading [**Making a pull request**](https://github.com/tidyverse/googledrive/blob/master/CONTRIBUTING.md#making-a-pull-request) in the
+[googledrive](http://googledrive.tidyverse.org/) package's [`CONTRIBUTING.md`](https://github.com/tidyverse/googledrive/blob/master/CONTRIBUTING.md).
+
+[^rstudio_roxygen]: For a brief, visual overview of some of the RStudio-roxygen2 
+integration features, see [Writing Package Documentation](https://support.rstudio.com/hc/en-us/articles/200532317-Writing-Package-Documentation) from RStudio Support.
