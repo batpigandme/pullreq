@@ -1,7 +1,7 @@
 ---
 title: "PRs in the Tidyverse: Part 1"
 author: "Mara Averick"
-date: "2017-11-26"
+date: "2017-11-27"
 output:
   html_document:
     keep_md: TRUE
@@ -18,7 +18,7 @@ output:
 object documentation in the tidyverse, this means the `.R` files. 
 
 From the GitHub repo, your workflow should be: `fork`, `clone`, `check`, 
-(`branch`), `edit`, render using `document()`, `check`, `push`, `PR`.
+(`branch`), `edit`, render using `devtools::document()`, `check`, `push`, `PR`.
 
 
 
@@ -42,26 +42,25 @@ on many levels.
 ![Source: You Do Not Need to Tell Me I Have A Typo in My Documentation by Yihui Xie](/Users/maraaverick/pullreq/docs/imgs/yihui_typos.png)  
 
 
-But, I've also been on the other side of the screen: seeing a typo, 
-and wanting to fix it without hassling the maintainers, but have given up half-way
-through because I didn't know _where_ to make the change it. I know the correct 
-answer is _somewhere_ upstream, but I might not be exactly sure where. 
-In some instances, this isn't the case— I know that a `README.md` file is the 
-output of a `README.Rmd`, if it exists. But with package documentation 
-(vignettes, pkgdown sites, etc) it's not as readily apparent.
+But, I've also been on the other side of the screen: seeing a typo, and
+wanting to fix it without hassling the maintainers, but have given up half-way
+through because I didn't know _where_ to make the change it. I know the correct
+answer is _somewhere_ upstream, but I might not be exactly sure where. In some
+instances, this isn't the case— I know that a `README.md` file is the output of
+a `README.Rmd`, if it exists. But with package documentation (vignettes, pkgdown
+sites, etc) it's not as readily apparent.
 
 ![R Markdown README to Markdown README](/Users/maraaverick/pullreq/docs/imgs/readme_rmd_to_md.png)
 
-You don't need to be an R neophyte for the above to be true.[^1]
-No one wins in this scenario. Nobody wants typos, and this kind of minor fix is 
-a great way to get familiar with the mechanics of making contributions. Plus, 
-I'd way rather have package maintainers working on those sweet feature requests 
-I submitted than hunting around for a renegade letter or two in the function 
-reference.
+You don't need to be an R neophyte for the above to be true.[^1] No one wins in
+this scenario. Nobody wants typos, and this kind of minor fix is a great way to
+get familiar with the mechanics of making contributions. Plus, I'd way rather
+have package maintainers working on those sweet feature requests I submitted
+than hunting around for a renegade letter or two in the function reference.
 
-An alternate title to this could've been **Packages for people who don't actually 
-want to write packages**. Expect hand-waiving and references to magic, invisible 
-happenings, because this is a bare-minimum, forensic approach.
+An alternate title to this could've been **Packages for people who don't
+actually want to write packages**. Expect hand-waiving and references to magic,
+invisible happenings, because this is a bare-minimum, forensic approach.
 
 ## What is this?
 
@@ -250,7 +249,7 @@ little while, which doesn't necessarily mean that anything's wrong. It's also
 likely that there are some parameters passed to `devtools::check()`, which is 
 totally fine.
 
- + ![Check icon in RStudio Build pane](/Users/maraaverick/pullreq/docs/imgs/build_check_button.png)
+![Check icon in RStudio Build pane](/Users/maraaverick/pullreq/docs/imgs/build_check_button.png)
 
 It's worth taking a look at the arguments, if only to help you understand any 
 errors or warnings returned. For example, the warnings re. missing vignettes 
@@ -265,9 +264,11 @@ devtools::check(build_args = c('--no-build-vignettes'))
 
 #### Frequently found failures
 
- * Missing packages. Solution? Install the packages.
+ * Missing packages. 
+    
+    + Solution? Install the packages.
  
- ![Missing suggested packages](/Users/maraaverick/pullreq/docs/imgs/dplyr_cmd_check_old.png)
+    ![Missing suggested packages](/Users/maraaverick/pullreq/docs/imgs/dplyr_cmd_check_old.png)
  
  * Assorted things totally unrelated to what I'm trying to fix
  
@@ -299,7 +300,12 @@ That done, you can now run `devtools::check()` _again_, to ensure your changes
 haven't introduced any new errors. Don't forget to keep the same `build_args`
 from the first time around. You can even just click the **Check** icon.
 
-![Check updated package](/Users/maraaverick/pullreq/docs/imgs/devtools_check.png)
+![Run `devtools::check()`](/Users/maraaverick/pullreq/docs/imgs/devtools_check.png)
+
+As you can see (below), there are still two warnings after running `check`, but,
+since these are the _same ones_ established at baseline, we're good to go.
+
+![Check warnings on updated package](/Users/maraaverick/pullreq/docs/imgs/R_CMD_check_success.png)
 
 #### n.b. outside of the Tidyverse YMMV
 
@@ -314,7 +320,7 @@ it's not clear based on a repo or project's contributing guidelines.
 
 Now you can navigate to the appropriate **Git** UI either by using the Git
 pulldown menu and selecting **Commit** or by clicking on either the **Diff** or
-**Commit** buttons in the Git tab in your environment pane.
+**Commit** buttons in the Git tab in your environment pane.[^shortcuts]
 
 You will then see an interface that includes all of the files you have added,
 deleted, or edited; as well as a space in which you can write your Git commit
@@ -349,4 +355,8 @@ for it: pkgdown.
 [^2]: The same text is also found in the `summarise.Rd` file, but `.Rd` files do
 not show up in GitHub searches by default.
 
+[^shortcuts]: There are also some useful keyboard shortcuts you can use. Check
+out the [RStudio IDE Cheat Sheet](https://github.com/rstudio/cheatsheets/raw/
+master/rstudio-ide.pdf) or go to the **Tools** menu, and select **Keyboard
+Shortcuts Help** for a helpful list.
 
