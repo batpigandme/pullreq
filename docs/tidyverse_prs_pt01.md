@@ -134,7 +134,7 @@ these sites, so the content only needs to be edited in one place.[^pkgdown]
 ![roxygen R to man folders](https://i.imgur.com/hRKGQ80.gif)
 
 
-![roxygen R to Rd files](https://i.imgur.com/rz8BVM1.gif)
+![roxygen R to Rd files](https://i.imgur.com/qXq6jJP.gif)
 
 #### End image options
 
@@ -251,8 +251,8 @@ to tick the appropriate radio button.
 
 ### Branching and baseline
 
-In addition to cloning the files in the package, you should now have two "new" 
-tabs in your environment pane: **Build** and **Git**.
+In addition to to the cloned files, you should now have two "new" tabs in your
+environment pane: **Build** and **Git**.
 
 ![RStudio before and after cloning repo](/Users/maraaverick/pullreq/imgs/before_after_new_proj.png)
 
@@ -266,16 +266,16 @@ In the **Git** tab, click on the icon with purple boxes to create a new
 
 ### CMD Check
 
-Now you're ready to get your baseline using R CMD check. You can do this by 
-clicking on the **Check** icon in the **Build** tab. Note that this may take a 
-little while, which doesn't necessarily mean that anything's wrong. It's also 
-likely that there are some parameters passed to `devtools::check()`, which is 
-totally fine.
+Now you're ready to establish your baseline using R CMD check. You can do this
+by clicking on the **Check** icon in the **Build** tab. Note that this may take
+a little while, which does _not_ necessarily mean that anything's wrong. It's
+also possible that there are some parameters passed to `devtools::check()`,
+which is fine.
 
 ![Check icon in RStudio Build pane](/Users/maraaverick/pullreq/imgs/build_check_button.png)
 
-It's worth taking a look at the arguments, if only to help you understand any 
-errors or warnings returned. For example, the warnings re. missing vignettes 
+It's worth taking a look at the build arguments, if only to help you understand
+any errors or warnings returned. For example, the warnings re. missing vignettes
 aren't surprising, given `--no-build-vignettes` was passed as a `build_arg`.
 
 
@@ -304,11 +304,13 @@ devtools::check(build_args = c('--no-build-vignettes'))
    + If you're fixing something in a function reference (like this example), try 
    running `devtools::check_man()` and see what happens. 
    
-You're trying to establish a baseline to make sure that _you_ didn't break 
-anything. So, if you find that you can make your edit without _changing_ the 
-output of R CMD check,things are going well.
+   + Visit the package's GitHub repo, and see if there are any related Issues.
    
-### Now you're ready to make your change!
+You're establishing a baseline to make sure that _you_ didn't break 
+anything. So, if you find that you can make your edit without _changing_ the 
+output of R CMD check, everything is 🆗.
+   
+### Time to make your change!
 
 Now you're ready to fix that typo... Remember, the `.R` file is the source,
 so it's the only place we'll be fixing anything by hand. Once you've edited
@@ -367,9 +369,11 @@ And, finally, you'll be ready to `git push`.
 
 ![Git push from RStudio](/Users/maraaverick/pullreq/imgs/git_push.png)
 
+
 ### Readying your Pull Request
 
-Time to go back to your GitHub repo and make sure everything is as it should be.
+Time to go back to your GitHub <!--html_preserve--><i class="fa  fa-github "></i><!--/html_preserve--> repo and make sure
+everything is as it should be.
 Click on **Compare** to view the changes you've made— these should be identical
 to the changes you saw in the Git diff view in RStudio.
 
