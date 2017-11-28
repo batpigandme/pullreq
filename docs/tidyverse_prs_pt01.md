@@ -48,7 +48,7 @@ This document is an effort to avoid the scenario above. Yihui Xie's [You Do Not 
 is right on many levels, but, if you're unfamiliar with the inner workings of an 
 R package, this is easier said than done.
 
-![Source: You Do Not Need to Tell Me I Have A Typo in My Documentation by Yihui Xie](/Users/maraaverick/pullreq/imgs/yihui_typos.png)  
+![Source: You Do Not Need to Tell Me I Have A Typo in My Documentation by Yihui Xie](https://i.imgur.com/BNlAgE6.png)  
 
 
 In learning R, I've encountered this scenario several times: seeing a typo,
@@ -59,7 +59,7 @@ will know that a `README.md` file is the output of a `README.Rmd`, if it exists.
 But with package documentation (vignettes, pkgdown sites, etc) this is not as
 readily apparent.
 
-![R Markdown README to Markdown README](/Users/maraaverick/pullreq/imgs/readme_rmd_to_md.png)
+![R Markdown README to Markdown README](https://i.imgur.com/PZROQGt.png)
 
 You don't need to be new to R for the circumstances described above to occur.[^1] 
 No one wins in this scenario. Nobody wants typos, and making this kind of minor
@@ -210,23 +210,23 @@ For example, the typo _exists_ in `summarise.html`, but (even if you didn't know
 about pkgdown and roxygen) you'd never edit that because it says `do not edit by 
 hand`. 
 
-![dplyr summarise.html](/Users/maraaverick/pullreq/imgs/summarise_html_combo.png)
+![dplyr summarise.html](https://i.imgur.com/jk6PaKd.png)
 
 ### Over in the repo...
 
 For _most_ function references there will be an file `function.R`. However, if 
 go to the dplyr repo and to the `R/` folder, `summarise.R` isn't there! 
 
-![summarise.R doesn't exist](/Users/maraaverick/pullreq/imgs/no_summarise_r_file.png)
+![summarise.R doesn't exist](https://i.imgur.com/9bPtwl0.png)
 
 But, since GitHub repos are searchable, we can just look for our text that way.[^2] 
 
-![dplyr repo search for "backend that supports"](/Users/maraaverick/pullreq/imgs/repo_search_text.png)
+![dplyr repo search for "backend that supports"](https://i.imgur.com/852OHmS.png)
 
 We've already covered `summarise.html` (namely, the fact that we won't be
 editing it), so it looks like `manip.R` is source file we're after.
 
-!["...backend that supports" in `manip.R`](/Users/maraaverick/pullreq/imgs/manipr_top_bottom.png)
+!["...backend that supports" in `manip.R`](https://i.imgur.com/yD1dOEi.png)
 
 ## Your very own `dplyr`
 
@@ -236,9 +236,9 @@ would only show up in one of three places (the `.R` file, but not in `.Rd`, or
 you'll get the proper URL so that you can **clone** the repo locally on your 
 machine.
 
-![Clone repo from your dplyr fork](/Users/maraaverick/pullreq/imgs/clone_repo.png)
+![Clone repo from your dplyr fork](https://i.imgur.com/DclZzeo.png)
 
-![Copy URL from _your_ fork to clone repo](/Users/maraaverick/pullreq/imgs/gh_clone_from_your_fork.png)
+![Copy URL from _your_ fork to clone repo](https://i.imgur.com/hGj0WiQ.png)
 
 The subsequent steps will, for the most part, follow the [**Existing project, GitHub first**](http://happygitwithr.com/existing-github-first.html) chapter of Jenny 
 Bryan's Happy Git with R. From **File** >> **New Project**, you can clone your 
@@ -246,7 +246,7 @@ copy of dplyr by putting the URL you copied from GitHub into the aptly-named
 **Repository URL** field. You should open this up in a new R session, so be sure 
 to tick the appropriate radio button.
 
-![New project from Git in RStudio](/Users/maraaverick/pullreq/imgs/new_r_project_from_git.png)
+![New project from Git in RStudio](https://i.imgur.com/kHVGWfo.png)
 
 
 ### Branching and baseline
@@ -254,14 +254,14 @@ to tick the appropriate radio button.
 In addition to to the cloned files, you should now have two "new" tabs in your
 environment pane: **Build** and **Git**.
 
-![RStudio before and after cloning repo](/Users/maraaverick/pullreq/imgs/before_after_new_proj.png)
+![RStudio before and after cloning repo](https://i.imgur.com/L0n14VQ.png)
 
 #### Optional: branch out
 
 In the **Git** tab, click on the icon with purple boxes to create a new 
 **branch**. It's nice to give it an informative name, for example: `summarise-typo`. 
 
-![Git branch icon](/Users/maraaverick/pullreq/imgs/local_git_branch.png)
+![Git branch icon](https://i.imgur.com/n1tYeUP.png)
 
 
 ### CMD Check
@@ -272,7 +272,7 @@ a little while, which does _not_ necessarily mean that anything's wrong. It's
 also possible that there are some parameters passed to `devtools::check()`,
 which is fine.
 
-![Check icon in RStudio Build pane](/Users/maraaverick/pullreq/imgs/build_check_button.png)
+![Check icon in RStudio Build pane](https://i.imgur.com/SImpS6M.png)
 
 It's worth taking a look at the build arguments, if only to help you understand
 any errors or warnings returned. For example, the warnings re. missing vignettes
@@ -283,7 +283,7 @@ aren't surprising, given `--no-build-vignettes` was passed as a `build_arg`.
 devtools::check(build_args = c('--no-build-vignettes'))
 ```
 
-![dplyr R CMD check results](/Users/maraaverick/pullreq/imgs/dplyr_cmd_check.png)
+![dplyr R CMD check results](https://i.imgur.com/89IjEEz.png)
 
 #### Frequently found failures
 
@@ -291,7 +291,7 @@ devtools::check(build_args = c('--no-build-vignettes'))
     
     + Solution? Install the packages.
  
-    ![Missing suggested packages](/Users/maraaverick/pullreq/imgs/dplyr_cmd_check_old.png)
+    ![Missing suggested packages](https://i.imgur.com/CfRRwxg.png)
  
  * Assorted things totally unrelated to what I'm trying to fix
  
@@ -299,7 +299,7 @@ devtools::check(build_args = c('--no-build-vignettes'))
    will take you to Travis CI, where you can see the logs from the most recent 
    build of the package, including the output of `R CMD check`
    
-   ![Travis CI R CMD check](/Users/maraaverick/pullreq/imgs/travis_build_dplyr.png)
+   ![Travis CI R CMD check](https://i.imgur.com/hXfwtHE.png)
    
    + If you're fixing something in a function reference (like this example), try 
    running `devtools::check_man()` and see what happens. 
@@ -319,18 +319,18 @@ documentation files, including `summarise.Rd`.
 
 You'll then reload your library.
 
-![Command history from checking, editing, and rebuilding dplyr documentation](/Users/maraaverick/pullreq/imgs/command_history.png)
+![Command history from checking, editing, and rebuilding dplyr documentation](https://i.imgur.com/dMmk8TH.png)
 
 That done, you can now run `devtools::check()` _again_, to ensure your changes
 haven't introduced any new errors. Don't forget to keep the same `build_args`
 from the first time around. You can even just click the **Check** icon.
 
-![Run `devtools::check()`](/Users/maraaverick/pullreq/imgs/devtools_check.png)
+![Run `devtools::check()`](https://i.imgur.com/5bMBmr0.png)
 
 As you can see (below), there are still two warnings after running `check`, but,
 since these are the _same ones_ established at baseline, we're good to go.
 
-![Check warnings on updated package](/Users/maraaverick/pullreq/imgs/R_CMD_check_success.png)
+![Check warnings on updated package](https://i.imgur.com/SI0Uwp9.png)
 
 #### n.b. outside of the Tidyverse YMMV
 
@@ -348,7 +348,7 @@ pulldown menu and selecting **Commit** or by clicking on either the **Diff**
 or **Commit** buttons in the Git tab in your environment pane. You can also use
 keyboard shortcuts to take you to the same place.[^shortcuts]
 
-![RStudio Version Control Keyboard Shortcuts](/Users/maraaverick/pullreq/imgs/rstudio_git_shortcuts.png)
+![RStudio Version Control Keyboard Shortcuts](https://i.imgur.com/m3JNLEv.png)
 
 You will then see an interface that includes all of the files you have added,
 deleted, or edited; as well as a space in which you can write your Git commit
@@ -358,16 +358,16 @@ something short (fewer than 50 characters) that starts with a verb and describes
 what you did. If you need to add more details, there will be space for that when
 you make your pull request.
 
-![Git diff and commit pane in RStudio](/Users/maraaverick/pullreq/imgs/rstudio_git_diff.png)
+![Git diff and commit pane in RStudio](https://i.imgur.com/KTvkKYY.png)
 
 Once you're happy with your message, and have made sure that you've only changed
 the files you intended to, go ahead and hit the **Commit** button.
 
-![Git commit from RStudio](/Users/maraaverick/pullreq/imgs/rstudio_git_commit.png)
+![Git commit from RStudio](https://i.imgur.com/CQ5OXCi.png)
 
 And, finally, you'll be ready to `git push`.
 
-![Git push from RStudio](/Users/maraaverick/pullreq/imgs/git_push.png)
+![Git push from RStudio](https://i.imgur.com/Rdxifja.png)
 
 
 ### Readying your Pull Request
@@ -377,17 +377,17 @@ everything is as it should be.
 Click on **Compare** to view the changes you've made— these should be identical
 to the changes you saw in the Git diff view in RStudio.
 
-![GitHub Compare](/Users/maraaverick/pullreq/imgs/github_compare_button.png)
+![GitHub Compare](https://i.imgur.com/OLeFyvj.png)
 
 Depending on whether or not you used a branching workflow, you can look at the
 split view to see changes as compared to either your master branch, or to the
 `tidyverse/dplyr` master branch.
 
-![GitHub split-view diff](/Users/maraaverick/pullreq/imgs/github_splitview_diff.png)
+![GitHub split-view diff](https://i.imgur.com/ySsRbUm.png)
 
 You can get to a similar interface by clicking on **Compare & pull request**.
 
-![GitHub Compare & pull request](/Users/maraaverick/pullreq/imgs/git_patch_ui.png)
+![GitHub Compare & pull request](https://i.imgur.com/WwgnWnA.png)
 
 Once you're satisfied that your changes are as they should be, you're ready
 to submit your pull request to the master repo (in this case, [**tidyverse/dplyr**](https://github.com/tidyverse/dplyr)). Since this PR is a 
@@ -395,13 +395,13 @@ simple typo fix, the pull-request title will probably suffice for what you need
 to say.[^gd_making_a_pr] Make sure that the appropriate base and head forks are
 selected before submitting your PR.
 
-![Selecting a base fork and a head fork when submitting a pull request on GitHub](/Users/maraaverick/pullreq/imgs/base_fork_head_fork_pr.png)
+![Selecting a base fork and a head fork when submitting a pull request on GitHub](https://i.imgur.com/llcuxMn.png)
 
 ### Pull has been requested
 
 It's official, your pull request has been submitted. 🎉
 
-![dplyr open pull requests](/Users/maraaverick/pullreq/imgs/dplyr_open_prs.png)
+![dplyr open pull requests](https://i.imgur.com/tBgYewP.png)
 
 Now what? Well, it may take some time for your PR to be reviewed. Tidyverse
 projects tend to be developed in waves, and you shouldn't interpret any lag time
@@ -416,13 +416,13 @@ times. So, your fresh eyes are invaluable.
 The three icons (green check, red x, and yellow circle) indicate the build
 status of the repository with the changes you've made from [Travis CI](https://travis-ci.org/) and/or [AppVeyor](https://www.appveyor.com/).
 
-![Pull request icons indicating build status](/Users/maraaverick/pullreq/imgs/build_status.png)
+![Pull request icons indicating build status](https://i.imgur.com/8PCuRWQ.png)
 
 For the most part, you do not need to worry about these if you've made small
 changes. If you're curious about what they mean, you _can_ click on the icon and
 figure out which, if any, builds failed.
 
-![GitHub pull request build status](/Users/maraaverick/pullreq/imgs/pr_build_status.png)
+![GitHub pull request build status](https://i.imgur.com/HUXvqE2.png)
 
 
 [^1]: True confession: I really didn't understand where those `do not edit
