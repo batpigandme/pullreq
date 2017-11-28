@@ -238,6 +238,8 @@ machine.
 
 ![Clone repo from your dplyr fork](/Users/maraaverick/pullreq/imgs/clone_repo.png)
 
+![Copy URL from _your_ fork to clone repo](/Users/maraaverick/pullreq/imgs/gh_clone_from_your_fork.png)
+
 The subsequent steps will, for the most part, follow the [**Existing project, GitHub first**](http://happygitwithr.com/existing-github-first.html) chapter of Jenny 
 Bryan's Happy Git with R. From **File** >> **New Project**, you can clone your 
 copy of dplyr by putting the URL you copied from GitHub into the aptly-named 
