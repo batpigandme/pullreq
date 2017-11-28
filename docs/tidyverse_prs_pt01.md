@@ -1,7 +1,7 @@
 ---
 title: "PRs in the Tidyverse: Part 1"
 author: "Mara Averick"
-date: "2017-11-27"
+date: "2017-11-28"
 output:
   html_document:
     keep_md: TRUE
@@ -15,7 +15,7 @@ output:
 ## TL;DR
 
 **The Big Picture**: Documentation should always be fixed at its source. For 
-function references in the tidyverse, this means making changes in `.R` files. 
+*function references* in the tidyverse, this means making changes in `.R` files. 
 
 Starting from the GitHub repo of the target package (in this case, dplyr), this
 will take you through the following workflow:
@@ -120,14 +120,23 @@ the product, but not its source. The package maintainer would then have to
 either fix the source file by hand, or risk losing the change the next time the 
 website output is rendered. The relationship is unidirectional.
 
-### A detour into `pkgdown` 
+### A detour into `pkgdown` & `roxygen2`
 
 Here is (almost) everything you need to know about pkgdown for the purposes of 
 this guide: it makes static HTML sites for R packages. It's special because it 
 leverages the pre-existing conventions for writing R documentation to render 
 these sites, so the content only needs to be edited in one place.[^pkgdown]
 
+##### Image options...
+
 ![R to man/ to docs/](https://i.imgur.com/rI1zTnc.gif)
+
+![roxygen R to man folders](https://i.imgur.com/hRKGQ80.gif)
+
+
+![roxygen R to Rd files](https://i.imgur.com/rz8BVM1.gif)
+
+#### End image options
 
 Different components of a pkgdown site come from different parts of an R 
 package, some of which have already been rendered by 
@@ -187,7 +196,7 @@ add <- function(x, y) {
 ```
 
 Function references are just one part of a pkgdown site/package documentation, 
-but it's whats in our example.[^rstudio_roxygen]
+but it's what's in our example.[^rstudio_roxygen]
 
 ![R to Rd](https://i.imgur.com/MzZiB2h.gif)
 
