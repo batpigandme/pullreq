@@ -100,13 +100,13 @@ you'll need:
  * [roxygen2](https://github.com/klutometis/roxygen)
  * [devtools](https://github.com/hadley/devtools)
  * [testthat](http://testthat.r-lib.org/)
- * [pkgdown](https://hadley.github.io/pkgdown/index.html)
+ * [pkgdown](http://pkgdown.r-lib.org/)
 
 If you already know all about those packages and how to use them, you probably
 don't need to be reading this. If you have heard those package names, and maybe
 use devtools to install packages from non-CRAN sources, you're in the right
 place.
-`r emo::ji_glue(":thumbsup:")`
+`r emo::ji("thumbsup")`
 
 ## Where do typos come from?
 
@@ -310,7 +310,7 @@ devtools::check(build_args = c('--no-build-vignettes'))
    
 You're establishing a baseline to make sure that _you_ didn't break 
 anything. So, if you find that you can make your edit without _changing_ the 
-output of R CMD check, everything is `r emo::ji_glue(":ok:")`.
+output of R CMD check, everything is `r emo::ji("ok")`.
    
 ### Time to make your change!
 
@@ -401,7 +401,7 @@ selected before submitting your PR.
 
 ### Pull has been requested
 
-It's official, your pull request has been submitted. `r emo::ji_glue(":tada:")`
+It's official, your pull request has been submitted. `r emo::ji("tada")`
 
 ![dplyr open pull requests](https://i.imgur.com/tBgYewP.png)
 

@@ -1,7 +1,7 @@
 ---
 title: "PRs in the Tidyverse: Part 1"
 author: "Mara Averick"
-date: "2017-11-28"
+date: "2018-01-23"
 output:
   html_document:
     keep_md: TRUE
@@ -96,7 +96,7 @@ you'll need:
  * [roxygen2](https://github.com/klutometis/roxygen)
  * [devtools](https://github.com/hadley/devtools)
  * [testthat](http://testthat.r-lib.org/)
- * [pkgdown](https://hadley.github.io/pkgdown/index.html)
+ * [pkgdown](http://pkgdown.r-lib.org/)
 
 If you already know all about those packages and how to use them, you probably
 don't need to be reading this. If you have heard those package names, and maybe
