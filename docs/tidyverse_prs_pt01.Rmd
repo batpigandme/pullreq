@@ -24,13 +24,13 @@ library(here)
 Starting from the GitHub repo of the target package (in this case, dplyr), this
 will take you through the following workflow:
 
-  * Fork `r icon::fa("code-fork")`
+  * Fork `r icon::fa("code-branch")`
   * Clone `r icon::fa("clone")`
-  * Check `r icon::fa("check-circle-o")`
-  * (Branch) `r icon::fa("share-alt")`
-  * Edit `r icon::fa("pencil")`
+  * Check `r icon::fa("check-circle")`
+  * Branch `r icon::fa("share-alt")`
+  * Edit `r icon::fa("pencil-alt")`
   * Render (using `devtools::document()`) `r icon::fa("file")`
-  * Check `r icon::fa("check-circle-o")`
+  * Check `r icon::fa("check-circle")`
   * Commit/Push `r icon::fa("upload")`
   * Submit `r icon::fa("star")`
 
@@ -259,7 +259,7 @@ environment pane: **Build** and **Git**.
 
 ![RStudio before and after cloning repo](https://i.imgur.com/L0n14VQ.png)
 
-#### Optional: branch out
+#### Branch out
 
 In the **Git** tab, click on the icon with purple boxes to create a new 
 **branch**. It's nice to give it an informative name, for example: `summarise-typo`. 

@@ -1,7 +1,7 @@
 ---
 title: "PRs in the Tidyverse: Part 1"
 author: "Mara Averick"
-date: "2018-01-23"
+date: "2019-03-15"
 output:
   html_document:
     keep_md: TRUE
@@ -20,15 +20,15 @@ output:
 Starting from the GitHub repo of the target package (in this case, dplyr), this
 will take you through the following workflow:
 
-  * Fork <!--html_preserve--><i class="fa  fa-code-fork "></i><!--/html_preserve-->
-  * Clone <!--html_preserve--><i class="fa  fa-clone "></i><!--/html_preserve-->
-  * Check <!--html_preserve--><i class="fa  fa-check-circle-o "></i><!--/html_preserve-->
-  * (Branch) <!--html_preserve--><i class="fa  fa-share-alt "></i><!--/html_preserve-->
-  * Edit <!--html_preserve--><i class="fa  fa-pencil "></i><!--/html_preserve-->
-  * Render (using `devtools::document()`) <!--html_preserve--><i class="fa  fa-file "></i><!--/html_preserve-->
-  * Check <!--html_preserve--><i class="fa  fa-check-circle-o "></i><!--/html_preserve-->
-  * Commit/Push <!--html_preserve--><i class="fa  fa-upload "></i><!--/html_preserve-->
-  * Submit <!--html_preserve--><i class="fa  fa-star "></i><!--/html_preserve-->
+  * Fork <!--html_preserve--><i class="fas  fa-code-branch "></i><!--/html_preserve-->
+  * Clone <!--html_preserve--><i class="fas  fa-clone "></i><!--/html_preserve-->
+  * Check <!--html_preserve--><i class="fas  fa-check-circle "></i><!--/html_preserve-->
+  * Branch <!--html_preserve--><i class="fas  fa-share-alt "></i><!--/html_preserve-->
+  * Edit <!--html_preserve--><i class="fas  fa-pencil-alt "></i><!--/html_preserve-->
+  * Render (using `devtools::document()`) <!--html_preserve--><i class="fas  fa-file "></i><!--/html_preserve-->
+  * Check <!--html_preserve--><i class="fas  fa-check-circle "></i><!--/html_preserve-->
+  * Commit/Push <!--html_preserve--><i class="fas  fa-upload "></i><!--/html_preserve-->
+  * Submit <!--html_preserve--><i class="fas  fa-star "></i><!--/html_preserve-->
 
 ## Preamble-y
 
@@ -256,7 +256,7 @@ environment pane: **Build** and **Git**.
 
 ![RStudio before and after cloning repo](https://i.imgur.com/L0n14VQ.png)
 
-#### Optional: branch out
+#### Branch out
 
 In the **Git** tab, click on the icon with purple boxes to create a new 
 **branch**. It's nice to give it an informative name, for example: `summarise-typo`. 
@@ -372,7 +372,7 @@ And, finally, you'll be ready to `git push`.
 
 ### Readying your Pull Request
 
-Time to go back to your GitHub <!--html_preserve--><i class="fa  fa-github "></i><!--/html_preserve--> repo and make sure
+Time to go back to your GitHub <!--html_preserve--><i class="fab  fa-github "></i><!--/html_preserve--> repo and make sure
 everything is as it should be.
 Click on **Compare** to view the changes you've made— these should be identical
 to the changes you saw in the Git diff view in RStudio.
